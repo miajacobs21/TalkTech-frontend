@@ -8,11 +8,11 @@ export const APP_ENVIRONMENT = 'development';
 if (APP_ENVIRONMENT === 'local') {
   BASE_ENDPOINT = 'http://localhost:5000';
 } else if (APP_ENVIRONMENT === 'development') {
-  BASE_ENDPOINT = 'https://api.dev.<your-backend-domain>';
+  BASE_ENDPOINT = 'https://api.dev.talktechserver.com';
 } else if (APP_ENVIRONMENT === 'staging') {
-  BASE_ENDPOINT = 'https://api.stg.<your-backend-domain>';
+  BASE_ENDPOINT = 'https://api.stg.talktechserver.com';
 } else if (APP_ENVIRONMENT === 'production') {
-  BASE_ENDPOINT = 'https://api.<your-backend-domain>';
+  BASE_ENDPOINT = 'https://api.talktechserver.com';
 }
 
 const BASE_URL = `${BASE_ENDPOINT}/api/v1`;
