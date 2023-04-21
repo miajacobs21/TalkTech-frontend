@@ -1,3 +1,8 @@
+This is the frontend repo for my Maryville University SWDV691 Capstone project. 
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
