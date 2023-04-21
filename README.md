@@ -1,4 +1,4 @@
-This is the frontend repo for my Maryville University SWDV691 Capstone project. 
+This is the frontend repo for my Maryville University SWDV691 Capstone project.
 
 
 
