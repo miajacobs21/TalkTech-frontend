@@ -9,7 +9,7 @@ import reducer, {
     toggleImageModal,
     toggleReactionsModal
   } from '@redux/reducers/modal/modal.reducer';
-  
+
   const initialState = {
     type: '',
     isOpen: false,
@@ -23,7 +23,7 @@ import reducer, {
     commentsModalIsOpen: false,
     deleteDialogIsOpen: false
   };
-  
+
   const modalData = {
     type: 'add',
     isOpen: true,
@@ -37,7 +37,7 @@ import reducer, {
     commentsModalIsOpen: true,
     deleteDialogIsOpen: true
   };
-  
+
   describe('modal reducer', () => {
     beforeEach(() => {
       initialState.type = '';
@@ -52,11 +52,11 @@ import reducer, {
       initialState.commentsModalIsOpen = false;
       initialState.deleteDialogIsOpen = false;
     });
-  
+
     it('should return the initial state', () => {
       expect(reducer(undefined, {})).toEqual(initialState);
     });
-  
+
     it('should open modal', () => {
       expect(reducer(initialState, openModal({ type: 'add', data: 'This is a message' }))).toEqual({
         type: 'add',
@@ -72,7 +72,7 @@ import reducer, {
         deleteDialogIsOpen: false
       });
     });
-  
+
     it('should close modal', () => {
       expect(reducer(modalData, closeModal())).toEqual({
         type: '',
@@ -88,7 +88,7 @@ import reducer, {
         deleteDialogIsOpen: false
       });
     });
-  
+
     it('should add post feeling', () => {
       expect(reducer(initialState, addPostFeeling({ feeling: 'happy' }))).toEqual({
         type: '',
@@ -104,7 +104,7 @@ import reducer, {
         deleteDialogIsOpen: false
       });
     });
-  
+
     it('should toggleImageModal', () => {
       expect(reducer(initialState, toggleImageModal(true))).toEqual({
         type: '',
@@ -120,7 +120,7 @@ import reducer, {
         deleteDialogIsOpen: false
       });
     });
-  
+
     it('should toggleFeelingModal', () => {
       expect(reducer(initialState, toggleFeelingModal(true))).toEqual({
         type: '',
@@ -136,7 +136,7 @@ import reducer, {
         deleteDialogIsOpen: false
       });
     });
-  
+
     it('should toggleGifModal', () => {
       expect(reducer(initialState, toggleGifModal(true))).toEqual({
         type: '',
@@ -152,7 +152,7 @@ import reducer, {
         deleteDialogIsOpen: false
       });
     });
-  
+
     it('should toggleReactionsModal', () => {
       expect(reducer(initialState, toggleReactionsModal(true))).toEqual({
         type: '',
@@ -168,7 +168,7 @@ import reducer, {
         deleteDialogIsOpen: false
       });
     });
-  
+
     it('should toggleCommentsModal', () => {
       expect(reducer(initialState, toggleCommentsModal(true))).toEqual({
         type: '',
@@ -184,7 +184,7 @@ import reducer, {
         deleteDialogIsOpen: false
       });
     });
-  
+
     it('should toggleDeleteDialog', () => {
       expect(reducer(initialState, toggleDeleteDialog({ toggle: true, data: 'deleted data' }))).toEqual({
         type: '',
