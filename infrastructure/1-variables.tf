@@ -8,25 +8,25 @@ variable "global_region" {
 variable "prefix" {
   type        = string
   description = "Prefix to be added to the AWS resources tags"
-  default     = "" # Add a unique name
+  default     = "talktechapp-client" # Add a unique name
 }
 
 variable "project" {
   type        = string
   description = "Prefix to be added to the AWS local tags"
-  default     = "" # You can use the name unique identifier created above
+  default     = "talktechapp-client" # You can use the name unique identifier created above
 }
 
 variable "main_client_app_domain" {
-  type        = string
+  type        = string0
   description = "Main client app domain"
-  default     = "" # Your frontend domain you created a route53 zone for
+  default     = "dev.talktechstream.com" # Your frontend domain you created a route53 zone for
 }
 
 variable "dev_client_app_domain" {
   type        = string
   description = "Dev client app domain"
-  default     = "dev.<your-frontend-domain>"
+  default     = "dev.talktechstream.com"
 }
 
 variable "custom_error_response" {

@@ -4,12 +4,12 @@ resource "aws_route53_record" "cloudfront_dns_record" {
   type    = "A"
 
   alias {
-    name                   = aws_cloudfront_distribution.chatapp_cloudfront_distribution.domain_name
-    zone_id                = aws_cloudfront_distribution.chatapp_cloudfront_distribution.hosted_zone_id
+    name                   = aws_cloudfront_distribution.talktechapp_cloudfront_distribution.domain_name
+    zone_id                = aws_cloudfront_distribution.talktechapp_cloudfront_distribution.hosted_zone_id
     evaluate_target_health = false
   }
 
   depends_on = [
-    aws_cloudfront_distribution.chatapp_cloudfront_distribution
+    aws_cloudfront_distribution.talktechapp_cloudfront_distribution
   ]
 }

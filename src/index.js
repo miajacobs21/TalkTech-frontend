@@ -28,13 +28,12 @@
 
 
 
-import App from './App';
+import App from '@root/App';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import '@root/index.scss';
 import { Provider } from 'react-redux';
-import { store } from '../redux-toolkit/store';
-import 'redux-store-element';
+import { store } from '@redux/store';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
