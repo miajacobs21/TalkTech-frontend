@@ -2,7 +2,7 @@ resource "aws_cloudfront_origin_access_identity" "oai" {
   comment = "OAI for ${var.dev_client_app_domain}"
 }
 
-resource "aws_cloudfront_distribution" "chatapp_cloudfront_distribution" {
+resource "aws_cloudfront_distribution" "talktechapp_cloudfront_distribution" {
   retain_on_delete    = false
   price_class         = "PriceClass_All"
   enabled             = true
@@ -11,8 +11,8 @@ resource "aws_cloudfront_distribution" "chatapp_cloudfront_distribution" {
   aliases             = [var.dev_client_app_domain]
 
   origin {
-    domain_name = aws_s3_bucket.chatapp_s3_bucket.bucket_regional_domain_name
-    origin_id   = aws_s3_bucket.chatapp_s3_bucket.id
+    domain_name = aws_s3_bucket.talktechapp_s3_bucket.bucket_regional_domain_name
+    origin_id   = aws_s3_bucket.talktechapp_s3_bucket.id
     s3_origin_config {
       origin_access_identity = aws_cloudfront_origin_access_identity.oai.cloudfront_access_identity_path
     }
@@ -21,7 +21,7 @@ resource "aws_cloudfront_distribution" "chatapp_cloudfront_distribution" {
   default_cache_behavior {
     allowed_methods        = ["GET", "HEAD", "OPTIONS", "PUT", "POST", "PATCH", "DELETE"]
     cached_methods         = ["GET", "HEAD", "OPTIONS"]
-    target_origin_id       = aws_s3_bucket.chatapp_s3_bucket.id
+    target_origin_id       = aws_s3_bucket.talktechapp_s3_bucket.id
     viewer_protocol_policy = "redirect-to-https"
     compress               = true
     min_ttl                = 0
