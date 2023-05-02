@@ -54,8 +54,7 @@ describe('modal reducer', () => {
   });
 
   it('should return the initial state', () => {
-    const result = reducer(undefined, {});
-    expect(result).toBe(initialState);
+    expect(reducer(undefined, {})).toEqual(initialState);
   });
 
   it('should open modal', () => {
