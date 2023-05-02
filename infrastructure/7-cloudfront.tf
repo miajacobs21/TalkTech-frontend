@@ -3,7 +3,6 @@ resource "aws_cloudfront_origin_access_identity" "oai" {
 }
 
 resource "aws_cloudfront_distribution" "talktechapp_cloudfront_distribution" {
-  allow_overwrite = true
   retain_on_delete    = false
   price_class         = "PriceClass_All"
   enabled             = true
