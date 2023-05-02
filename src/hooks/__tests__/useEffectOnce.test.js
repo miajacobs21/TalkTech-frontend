@@ -1,5 +1,5 @@
 import useEffectOnce from '@hooks/useEffectOnce';
-import { renderHook } from '@root/test.utils';
+import { renderHook } from '@testing-library/react';
 
 describe('useEffectOnce', () => {
   it('should run provided effect only once', () => {
