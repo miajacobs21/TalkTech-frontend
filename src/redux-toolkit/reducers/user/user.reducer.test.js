@@ -1,4 +1,4 @@
-import reducer, { addUser, clearUser, updateUserProfile } from '@redux//reducers/user/user.reducer';
+import reducer, { addUser, clearUser, updateUserProfile } from '@redux/reducers/user/user.reducer';
 
 const initialState = {
   token: '',
