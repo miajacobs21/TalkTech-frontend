@@ -5,10 +5,10 @@ resource "aws_s3_bucket" "talktechapp_s3_bucket" {
   tags = local.common_tags
 }
 
-resource "aws_s3_bucket_acl" "talktechapp_bucket_acl" {
-  bucket = aws_s3_bucket.talktechapp_s3_bucket.id
-  acl    = "private"
-}
+# resource "aws_s3_bucket_acl" "talktechapp_bucket_acl" {
+#   bucket = aws_s3_bucket.talktechapp_s3_bucket.id
+#   acl    = "private"
+# }
 
 resource "aws_s3_bucket_public_access_block" "public_block" {
   bucket = aws_s3_bucket.talktechapp_s3_bucket.id

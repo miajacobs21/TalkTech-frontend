@@ -40,7 +40,7 @@ aliases:
   - &notify-on-fail
     slack/notify:
       event: fail
-      channel: 'chatty-app-builds'
+      channel: 'talktech-app-builds'
       template: ''
       custom: |
         {
@@ -195,20 +195,20 @@ jobs:
             rm -rf .env
             if [ "${CIRCLE_BRANCH}" == "develop" ]
             then
-              # Make sure to use your correct s3 bucket name
-              aws --region eu-central-1 s3 sync s3://<your-s3-bucket>/frontend/develop .
+              # My s3 bucket name
+              aws --region us-east-1 s3 sync s3://talktech-env-files/frontend/develop .
             elif [ "${CIRCLE_BRANCH}" == "staging" ]
             then
-              # Make sure to use your correct s3 bucket name
-              aws --region eu-central-1 s3 sync s3://<your-s3-bucket>/frontend/staging .
+              # My s3 bucket name
+              aws --region us-east-1 s3 sync s3://talktech-env-files/frontend/staging .
             else
-              # Make sure to use your correct s3 bucket name
-              aws --region eu-central-1 s3 sync s3://<your-s3-bucket>/frontend/production .
+              # My s3 bucket name
+              aws --region us-east-1 s3 sync s3://talktech-env-files/frontend/production .
             fi
             npm run build
             echo "Build successful"
             # For the bucket name here, use the variable prefix inside your variables.tf file
-            aws --region eu-central-1 s3 cp build s3://<variable-prefix>-${CIRCLE_BRANCH}-app --recursive
+            aws --region us-east-1 s3 cp build s3://talktechapp-client-${CIRCLE_BRANCH}-app --recursive
       - *notify-on-fail
 
   aws-cloudfront-distribution:
@@ -234,7 +234,7 @@ jobs:
       - run: echo "Slack notification"
       - slack/notify:
           event: 'always'
-          channel: 'chatty-app-builds'
+          channel: 'talktech-app-builds'
           template: ''
           custom: |
             {
@@ -305,7 +305,7 @@ jobs:
             terraform workspace select ${CIRCLE_BRANCH} || terraform workspace new ${CIRCLE_BRANCH}
             terraform destroy -auto-approve
       - slack/notify:
-          channel: 'chatty-app-builds'
+          channel: 'talktech-app-builds'
           event: always
           template: basic_on_hold_1
 

@@ -18,7 +18,7 @@ variable "project" {
 }
 
 variable "main_client_app_domain" {
-  type        = string0
+  type        = string
   description = "Main client app domain"
   default     = "dev.talktechstream.com" # Your frontend domain you created a route53 zone for
 }

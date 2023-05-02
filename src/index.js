@@ -5,8 +5,6 @@
 
 // export { AuthTabs, ForgotPassword, Login, Register }
 
-
-
 // import App from '@root/App';
 // import React from 'react';
 // import ReactDOM from 'react-dom/client';
@@ -22,11 +20,6 @@
 //     </Provider>
 //   </React.StrictMode>
 // );
-
-
-
-
-
 
 import App from '@root/App';
 import React from 'react';
