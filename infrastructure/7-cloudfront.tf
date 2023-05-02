@@ -8,7 +8,7 @@ resource "aws_cloudfront_distribution" "talktechapp_cloudfront_distribution" {
   enabled             = true
   is_ipv6_enabled     = false
   default_root_object = "index.html"
-  aliases             = [var.dev_client_app_domain]
+  aliases             = [dev.talktechstream.com]
 
   origin {
     domain_name = aws_s3_bucket.talktechapp_s3_bucket.bucket_regional_domain_name
