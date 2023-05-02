@@ -82,6 +82,7 @@ describe('modal reducer', () => {
       data: null,
       feelingsIsOpen: false,
       openFileDialog: false,
+      openVideoDialog: false,
       gifModalIsOpen: false,
       reactionsModalIsOpen: false,
       commentsModalIsOpen: false,
