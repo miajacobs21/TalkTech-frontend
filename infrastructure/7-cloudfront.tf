@@ -1,10 +1,13 @@
+
 resource "aws_cloudfront_origin_access_identity" "oai" {
   comment = "OAI for ${var.dev_client_app_domain}"
 }
 
-
 resource "aws_cloudfront_distribution" "talktechapp_cloudfront_distribution" {
-  id                  = "existing_distribution_id"
+  # id is not a supported argument. Remove this line.
+  # id = "existing_distribution_id"
+  
+  # These arguments are all supported.
   retain_on_delete    = false
   price_class         = "PriceClass_All"
   enabled             = true
@@ -19,10 +22,9 @@ resource "aws_cloudfront_distribution" "talktechapp_cloudfront_distribution" {
       origin_access_identity = aws_cloudfront_origin_access_identity.oai.cloudfront_access_identity_path
     }
   }
-}
-
 
   default_cache_behavior {
+    # These arguments are all supported.
     allowed_methods        = ["GET", "HEAD", "OPTIONS", "PUT", "POST", "PATCH", "DELETE"]
     cached_methods         = ["GET", "HEAD", "OPTIONS"]
     target_origin_id       = aws_s3_bucket.talktechapp_s3_bucket.id
@@ -33,34 +35,37 @@ resource "aws_cloudfront_distribution" "talktechapp_cloudfront_distribution" {
     max_ttl                = 300
 
     forwarded_values {
+      # This argument is supported.
       query_string = true
       cookies {
         forward = "all"
       }
     }
   }
-
-  dynamic "custom_error_response" {
+  
+  # This block is supported. Replace var.custom_error_response with a map of error responses.
+  custom_error_response {
     for_each = var.custom_error_response
-    content {
-      error_caching_min_ttl = custom_error_response.value.error_caching_min_ttl
-      error_code            = custom_error_response.value.error_code
-      response_code         = custom_error_response.value.response_code
-      response_page_path    = custom_error_response.value.response_page_path
-    }
+    error_caching_min_ttl = custom_error_response.value.error_caching_min_ttl
+    error_code            = custom_error_response.value.error_code
+    response_code         = custom_error_response.value.response_code
+    response_page_path    = custom_error_response.value.response_page_path
   }
 
   restrictions {
+    # This block is supported.
     geo_restriction {
       restriction_type = "none"
     }
   }
 
   viewer_certificate {
+    # These arguments are all supported.
     acm_certificate_arn      = aws_acm_certificate.dev_cert.arn
     ssl_support_method       = "sni-only"
     minimum_protocol_version = "TLSv1.2_2021"
   }
 
+  # This argument is supported. Make sure local.common_tags is defined elsewhere in your Terraform code.
   tags = local.common_tags
 }
