@@ -2,7 +2,9 @@ resource "aws_cloudfront_origin_access_identity" "oai" {
   comment = "OAI for ${var.dev_client_app_domain}"
 }
 
+
 resource "aws_cloudfront_distribution" "talktechapp_cloudfront_distribution" {
+  id                  = "existing_distribution_id"
   retain_on_delete    = false
   price_class         = "PriceClass_All"
   enabled             = true
@@ -17,6 +19,8 @@ resource "aws_cloudfront_distribution" "talktechapp_cloudfront_distribution" {
       origin_access_identity = aws_cloudfront_origin_access_identity.oai.cloudfront_access_identity_path
     }
   }
+}
+
 
   default_cache_behavior {
     allowed_methods        = ["GET", "HEAD", "OPTIONS", "PUT", "POST", "PATCH", "DELETE"]
