@@ -48,6 +48,7 @@ describe('modal reducer', () => {
     initialState.data = null;
     initialState.feelingsIsOpen = false;
     initialState.openFileDialog = false;
+    initialState.openVideoDialog = false;
     initialState.gifModalIsOpen = false;
     initialState.reactionsModalIsOpen = false;
     initialState.commentsModalIsOpen = false;
@@ -67,6 +68,7 @@ describe('modal reducer', () => {
       data: 'This is a message',
       feelingsIsOpen: false,
       openFileDialog: false,
+      openVideoDialog: false,
       gifModalIsOpen: false,
       reactionsModalIsOpen: false,
       commentsModalIsOpen: false,
@@ -83,6 +85,7 @@ describe('modal reducer', () => {
       data: null,
       feelingsIsOpen: false,
       openFileDialog: false,
+      openVideoDialog: false,
       gifModalIsOpen: false,
       reactionsModalIsOpen: false,
       commentsModalIsOpen: false,
@@ -99,6 +102,7 @@ describe('modal reducer', () => {
       data: null,
       feelingsIsOpen: false,
       openFileDialog: false,
+      openVideoDialog: false,
       gifModalIsOpen: false,
       reactionsModalIsOpen: false,
       commentsModalIsOpen: false,
@@ -115,6 +119,7 @@ describe('modal reducer', () => {
       data: null,
       feelingsIsOpen: false,
       openFileDialog: true,
+      openVideoDialog: false,
       gifModalIsOpen: false,
       reactionsModalIsOpen: false,
       commentsModalIsOpen: false,
@@ -131,6 +136,7 @@ describe('modal reducer', () => {
       data: null,
       feelingsIsOpen: true,
       openFileDialog: false,
+      openVideoDialog: false,
       gifModalIsOpen: false,
       reactionsModalIsOpen: false,
       commentsModalIsOpen: false,
@@ -147,6 +153,7 @@ describe('modal reducer', () => {
       data: null,
       feelingsIsOpen: false,
       openFileDialog: false,
+      openVideoDialog: false,
       gifModalIsOpen: true,
       reactionsModalIsOpen: false,
       commentsModalIsOpen: false,
@@ -163,6 +170,7 @@ describe('modal reducer', () => {
       data: null,
       feelingsIsOpen: false,
       openFileDialog: false,
+      openVideoDialog: false,
       gifModalIsOpen: false,
       reactionsModalIsOpen: true,
       commentsModalIsOpen: false,
@@ -179,6 +187,7 @@ describe('modal reducer', () => {
       data: null,
       feelingsIsOpen: false,
       openFileDialog: false,
+      openVideoDialog: false,
       gifModalIsOpen: false,
       reactionsModalIsOpen: false,
       commentsModalIsOpen: true,
@@ -195,6 +204,7 @@ describe('modal reducer', () => {
       data: 'deleted data',
       feelingsIsOpen: false,
       openFileDialog: false,
+      openVideoDialog: false,
       gifModalIsOpen: false,
       reactionsModalIsOpen: false,
       commentsModalIsOpen: false,
