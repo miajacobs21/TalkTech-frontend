@@ -13,7 +13,7 @@ resource "aws_acm_certificate" "dev_cert" {
 }
 
 resource "aws_route53_record" "cert_validation_record" {
-  allow_overwrite = false
+  allow_overwrite = true
   ttl             = 60
   zone_id         = data.aws_route53_zone.main.zone_id
   name            = tolist(aws_acm_certificate.dev_cert.domain_validation_options)[0].resource_record_name

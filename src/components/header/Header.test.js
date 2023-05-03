@@ -49,7 +49,7 @@ describe('Header', () => {
       const headerImage = await screen.findByTestId('header-image');
       expect(headerImage).toBeInTheDocument();
       expect(headerImage.childNodes.item(0)).toHaveAttribute('src', 'logo.svg');
-      expect(headerImage.childNodes.item(1)).toHaveTextContent(/chatty/i);
+      expect(headerImage.childNodes.item(1)).toHaveTextContent(/talktech/i);
     });
 
     it('should have nav list items', async () => {

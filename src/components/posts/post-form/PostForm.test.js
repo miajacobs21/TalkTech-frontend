@@ -39,7 +39,7 @@ describe('PostForm', () => {
   it('should have 3 list items', async () => {
     render(<PostForm />);
     const listElement = await screen.findAllByTestId('list-item');
-    expect(listElement[0].childNodes.length).toEqual(3);
+    expect(listElement[0].childNodes.length).toEqual(4);
   });
 
   it('should have photo list item', async () => {

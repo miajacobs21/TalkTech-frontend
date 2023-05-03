@@ -10,14 +10,14 @@
     background-position: center;
     position: relative;
     z-index: 1;
-  
+
     .environment {
       position: absolute;
       padding: 10px;
       color: var(--white-1);
       font-weight: 900;
     }
-  
+
     &::before {
       content: "";
       display: block;
@@ -30,13 +30,13 @@
       background: linear-gradient(to bottom, var(--primary-1), var(--primary-2));
       opacity: 0.9;
     }
-  
+
     &-auth {
       display: flex;
       justify-content: center;
       flex-direction: column;
       text-align: left;
-  
+
       .tabs {
         margin: 30px auto;
         max-width: 500px;
@@ -47,17 +47,17 @@
         border-top-right-radius: 15px;
         border-bottom-right-radius: 15px;
         border-bottom-left-radius: 15px;
-  
+
         .tab-group {
           list-style: none;
           padding: 0;
           margin: 0;
-  
+
           .active button {
             background: var(--white-3);
             color: var(--gray-2);
           }
-  
+
           li button,
           .forgot-password, .reset-password {
             display: block;
@@ -74,11 +74,11 @@
             transition: all 0.4s ease-in-out;
           }
         }
-  
+
         .tab-item {
           padding: 30px 0 0;
         }
-  
+
         .tabs-forgot-password {
           height: 240px;
           border-bottom-right-radius: 15px;

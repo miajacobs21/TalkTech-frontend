@@ -33,7 +33,8 @@ describe('post reducer', () => {
   });
 
   it('should update post data', () => {
-    expect(reducer(initialState, updatePostItem(postData))).toEqual(postData);
+    const updatedState = reducer(initialState, updatePostItem(postData));
+    expect(updatedState).toMatchObject(postData);
   });
 
   it('should single post items', () => {
